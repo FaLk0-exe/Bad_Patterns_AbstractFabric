@@ -10,10 +10,10 @@ namespace Bad_Patterns_AbstractFactory_Example
         private readonly string _resourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
         
         private Alcoholic _alcoholic;
-        private DrinkAbstractFactory _drinkAbstractFactory;
+        private DrinkFactory _drinkFactory;
         public Form1()
         {
-            _drinkAbstractFactory = new DrinkAbstractFactory();
+            _drinkFactory = new DrinkFactory();
             _alcoholic = new Alcoholic(100);
             BindAlcoholicEvents();
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Bad_Patterns_AbstractFactory_Example
 
         private void DoDrink(DrinkType drinkType)
         {
-            var drink = _drinkAbstractFactory.Create(drinkType);
+            var drink = _drinkFactory.Create(drinkType);
             _alcoholic.Drink(drink);
         }
 

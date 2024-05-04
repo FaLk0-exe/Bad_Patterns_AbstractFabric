@@ -1,7 +1,7 @@
 ﻿
-public class DrinkAbstractFactory
+public class DrinkFactory
 {
-    public DrinkAbstractFactory()
+    public DrinkFactory()
     {
 
     }
